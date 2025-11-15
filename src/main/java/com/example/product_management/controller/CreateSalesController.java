@@ -328,7 +328,6 @@ public class CreateSalesController {
                         }
                     }
 
-                    // Insert order
                     int orderId;
                     try (PreparedStatement orderStmt = conn.prepareStatement(
                             "INSERT INTO orders (customer_id, order_date, status) VALUES (?, datetime('now'), ?)",
@@ -345,7 +344,6 @@ public class CreateSalesController {
                         }
                     }
 
-                    // Insert order items
                     try (PreparedStatement itemStmt = conn.prepareStatement(
                             "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)")) {
                         for (CartItem item : cartItems) {
@@ -359,7 +357,6 @@ public class CreateSalesController {
                         itemStmt.executeBatch();
                     }
 
-                    // Update stock
                     try (PreparedStatement stockStmt = conn.prepareStatement(
                             "UPDATE products SET quantity = quantity - ? WHERE id = ?")) {
                         for (CartItem item : cartItems) {
@@ -406,7 +403,6 @@ public class CreateSalesController {
 
         new Thread(task).start();
     }
-
 
     @FXML
     private void onSaveDraft() {

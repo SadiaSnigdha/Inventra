@@ -91,7 +91,7 @@ public class OrderHistoryDAO {
     public static ObservableList<ProductOrderSummary> getOrderHistoryByMonth(YearMonth month) throws SQLException {
         ObservableList<ProductOrderSummary> list = FXCollections.observableArrayList();
         String sql = """
-            SELECT\s
+            SELECT
                                            c.name AS customer_name,
                                            c.phone AS phone_number,
                                            o.order_date AS order_date,

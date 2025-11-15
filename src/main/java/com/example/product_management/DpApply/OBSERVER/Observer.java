@@ -1,4 +1,4 @@
-package com.example.product_management.DpApply;
+package com.example.product_management.DpApply.OBSERVER;
 
 import com.example.product_management.controller.StockEntry;
 

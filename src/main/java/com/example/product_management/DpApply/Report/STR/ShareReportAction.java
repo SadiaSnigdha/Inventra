@@ -1,4 +1,4 @@
-package com.example.product_management.DpApply.Report;
+package com.example.product_management.DpApply.Report.STR;
 
 public class ShareReportAction implements ReportActionStrategy {
     @Override

@@ -21,4 +21,8 @@ module com.example.product_management {
     opens com.example.product_management.DpApply to javafx.fxml;
     exports com.example.product_management.DpApply.Report;
     opens com.example.product_management.DpApply.Report to javafx.fxml;
+    exports com.example.product_management.DpApply.OBSERVER;
+    opens com.example.product_management.DpApply.OBSERVER to javafx.fxml;
+    exports com.example.product_management.DpApply.Report.STR;
+    opens com.example.product_management.DpApply.Report.STR to javafx.fxml;
 }

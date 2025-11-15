@@ -1,7 +1,7 @@
 package com.example.product_management.controller;
 
-import com.example.product_management.DpApply.ReminderObserver;
-import com.example.product_management.DpApply.ReminderSubject;
+import com.example.product_management.DpApply.OBSERVER.ReminderObserver;
+import com.example.product_management.DpApply.OBSERVER.ReminderSubject;
 import com.example.product_management.Utill.DatabaseConnection;
 
 import javafx.collections.FXCollections;
@@ -80,18 +80,16 @@ public class StockController {
                         rs.getString("expiry_date")
                 );
 
-                // expiry check
                 LocalDate expiry = safeParseDate(product.getExpiryDate());
                 if (expiry != null && expiry.isBefore(LocalDate.now())) {
                     reminderSubject.notifyObservers(product,
-                            "⚠ The product '" + product.getProductName() +
+                            "The product '" + product.getProductName() +
                                     "' has expired on " + expiry + ". Consider deleting it.");
                 }
 
-                // stock check
                 if (product.getQuantity() <= 1) {
                     reminderSubject.notifyObservers(product,
-                            "⚠ The product '" + product.getProductName() +
+                            "The product '" + product.getProductName() +
                                     "' is low on stock (quantity: " + product.getQuantity() + "). Consider restocking.");
                 }
 

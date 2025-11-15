@@ -1,5 +1,6 @@
 package com.example.product_management.DpApply;
 
+import com.example.product_management.DpApply.OBSERVER.Observer;
 import com.example.product_management.controller.StockEntry;
 
 public interface Subject {

@@ -1,6 +1,9 @@
 package com.example.product_management.controller;
 
 import com.example.product_management.DpApply.Report.*;
+import com.example.product_management.DpApply.Report.STR.CSVReportAction;
+import com.example.product_management.DpApply.Report.STR.PDFReportAction;
+import com.example.product_management.DpApply.Report.STR.ShareReportAction;
 import com.example.product_management.Utill.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
